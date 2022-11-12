@@ -329,6 +329,17 @@ namespace SharpD2D.Drawing
         }
 
         /// <summary>
+        /// Create an empty image
+        /// </summary>
+        /// <returns></returns>
+        public Image CreateImage()
+        {
+            ThrowIfNotInitialized();
+
+            return new Image(_device);
+        }
+
+        /// <summary>
         /// Create and empty image with specified size and format
         /// </summary>
         /// <param name="width"></param>
@@ -340,7 +351,7 @@ namespace SharpD2D.Drawing
         {
             ThrowIfNotInitialized();
 
-            return new Image(_device,new Size2(width,height),format);
+            return new Image(_device, new Size2(width, height), format);
         }
 
         /// <summary>
@@ -1033,12 +1044,11 @@ namespace SharpD2D.Drawing
         /// </summary>
         /// <param name="image">The Image to be drawn.</param>
         /// <param name="location">A PointF structure including the position of the upper-left corner of the image.</param>
+        /// <param name="scale">Scale of the image</param>
         /// <param name="opacity">A value indicating the opacity of the image. (alpha)</param>
-        public void DrawImage(Image image, PointF location, float scale, float opacity = 1.0f)
+        public void DrawImage(Image image, PointF location, float scale = 1.0f, float opacity = 1.0f)
         {
-            var rect = new RectangleF { Left = location.X, Top = location.Y };
-            rect.Bottom = rect.Top + scale * image.Height;
-            rect.Right = rect.Left + scale * image.Width;
+            var rect = RectangleF.Create(location.X,location.Y, scale * image.Width, scale * image.Height);
             DrawImage(image, rect, opacity);
         }
 

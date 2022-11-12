@@ -24,6 +24,11 @@ namespace SharpD2D.Drawing
         /// </summary>
         public Bitmap Bitmap;
 
+        public Image(RenderTarget device)
+        {
+            _device = device;
+        }
+
         /// <summary>
         ///     Initialize a empty placeholder bitmap with specified size and format
         /// </summary>
@@ -181,7 +186,7 @@ namespace SharpD2D.Drawing
         /// <param name="format">Format of the bitmap data</param>
         /// <remarks>If the size or format doesn't match the existing one, a new one is created and the old one will be destroyed</remarks>
         public void Update(int width, int height, int pitch, IntPtr scan0, PixelFormat format) =>
-            Update(width, height, pitch, scan0, format, Rectangle.Create(0, 0, Bitmap.PixelSize.Width, Bitmap.PixelSize.Height));
+            Update(width, height, pitch, scan0, format, Rectangle.Create(0, 0, Bitmap?.PixelSize.Width ?? 0, Bitmap?.PixelSize.Height ?? 0));
 
         /// <summary>
         ///     Converts an Image to a SharpDX Bitmap.

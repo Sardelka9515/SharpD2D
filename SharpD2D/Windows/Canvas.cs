@@ -142,11 +142,9 @@ namespace SharpD2D.Windows
                 var startTime = _watch.ElapsedMilliseconds;
                 lock (this)
                 {
-                    if ((!Initialize() && Graphics.Width != Width) || Graphics.Height != Height)
-                        Graphics.Resize(Width, Height);
+                    Initialize();
                     SafeDraw();
                 }
-
                 var fps = _fps;
                 if (fps == 0) break;
                 var remainingTime = (int)(1000 / fps - (_watch.ElapsedMilliseconds - startTime));
@@ -163,6 +161,8 @@ namespace SharpD2D.Windows
         {
             lock (DrawLock)
             {
+                if (Graphics.Width != Width || Graphics.Height != Height)
+                    Graphics.Resize(Width, Height);
                 _frameCount++;
                 var curTime = _watch.ElapsedMilliseconds;
                 var deltaTime = curTime - _lastDraw;
