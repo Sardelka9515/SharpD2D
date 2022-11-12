@@ -10,7 +10,6 @@
 		<Version>0.1.0.0</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>SharpD2D</Title>
-		<Authors>Sardelka</Authors>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="PInvoke.User32" Version="0.7.124" />
