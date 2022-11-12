@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<OutDir>..\bin</OutDir>
+		<DocumentationFile>..\bin\SharpD2D.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="PInvoke.User32" Version="0.7.124" />
+		<PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+	</ItemGroup>
+
+</Project>
