@@ -6,8 +6,9 @@
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<OutDir>..\bin</OutDir>
+		<TargetPlatform>Windows</TargetPlatform>
 		<DocumentationFile>..\bin\SharpD2D.xml</DocumentationFile>
-		<Version>0.1.1.0</Version>
+		<Version>0.1.1.1</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>SharpD2D</Title>
 		<Authors>Sardelka</Authors>

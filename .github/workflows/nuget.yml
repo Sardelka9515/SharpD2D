@@ -24,7 +24,7 @@ jobs:
           PROJECT_FILE_PATH: SharpD2D/SharpD2D.csproj
 
           # Configuration to build and package
-          # BUILD_CONFIGURATION: Release
+          BUILD_CONFIGURATION: Release
 
           # Platform target to compile (default is empty/AnyCPU)
           # BUILD_PLATFORM: x64
@@ -54,4 +54,4 @@ jobs:
           # NUGET_SOURCE: https://api.nuget.org
 
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
-          # INCLUDE_SYMBOLS: false
+          INCLUDE_SYMBOLS: true
